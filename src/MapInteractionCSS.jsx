@@ -21,7 +21,7 @@ const MapInteractionCSS = (props) => {
                 overflow: 'hidden',
                 touchAction: 'none', // Not supported in Safari :(
                 msTouchAction: 'none',
-                // cursor: 'all-scroll',
+                cursor: props.isDrawing ? 'crosshair' : 'all-scroll',
                 WebkitUserSelect: 'none',
                 MozUserSelect: 'none',
                 msUserSelect: 'none'
