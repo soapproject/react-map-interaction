@@ -13,7 +13,7 @@ const MapInteractionCSS = (props) => {
           // Translate first and then scale.  Otherwise, the scale would affect the translation.
           const transform = `translate(${translation.x}px, ${translation.y}px) scale(${scale})`;
           return (
-            <div
+            <div className='MapInteraction-wrapp'
               style={{
                 height: '100%',
                 width: '100%',
@@ -21,13 +21,13 @@ const MapInteractionCSS = (props) => {
                 overflow: 'hidden',
                 touchAction: 'none', // Not supported in Safari :(
                 msTouchAction: 'none',
-                cursor: 'all-scroll',
+                // cursor: 'all-scroll',
                 WebkitUserSelect: 'none',
                 MozUserSelect: 'none',
                 msUserSelect: 'none'
               }}
             >
-              <div
+              <div className='MapInteraction-inline'
                 style={{
                   display: 'inline-block', // size to content
                   transform: transform,
