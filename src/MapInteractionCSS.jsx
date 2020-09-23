@@ -5,7 +5,7 @@ import MapInteraction from './MapInteraction';
   This component provides a map like interaction to any content that you place in it. It will let
   the user zoom and pan the children by scaling and translating props.children using css.
 */
-const MapInteractionCSS = (props={isDrawing:false}) => {
+const MapInteractionCSS = (props) => {
   return (
     <MapInteraction {...props}>
       {
