@@ -6,6 +6,14 @@ import MapInteraction from './MapInteraction';
   the user zoom and pan the children by scaling and translating props.children using css.
 */
 const MapInteractionCSS = (props) => {
+  const getCursorStyle = () => {
+    if(props.status === 'drawing')
+      return 'crosshair'
+    else if(props.status === 'viewing')
+      return 'all-scroll'
+    else
+      return 'default'
+  }
   return (
     <MapInteraction {...props}>
       {
@@ -21,7 +29,7 @@ const MapInteractionCSS = (props) => {
                 overflow: 'hidden',
                 touchAction: 'none', // Not supported in Safari :(
                 msTouchAction: 'none',
-                cursor: props.isDrawing ? 'crosshair' : 'all-scroll',
+                cursor: getCursorStyle(),
                 WebkitUserSelect: 'none',
                 MozUserSelect: 'none',
                 msUserSelect: 'none'
